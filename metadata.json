@@ -1,0 +1,6 @@
+{
+  "name": "PokéDex AI",
+  "description": "API-powered Pokémon encyclopedia, AI strategy assistant, and team builder backed by live PokéAPI data.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

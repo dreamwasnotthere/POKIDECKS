@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom subtle scrollbars for dense workspaces */
+.dex-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.dex-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dex-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.dex-scroll::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Markdown prose inside Assistant messages */
+.dex-prose {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #1e293b;
+}
+
+.dex-prose h1,
+.dex-prose h2,
+.dex-prose h3,
+.dex-prose h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: #0f172a;
+  margin-top: 1.15em;
+  margin-bottom: 0.45em;
+  line-height: 1.3;
+}
+
+.dex-prose h1:first-child,
+.dex-prose h2:first-child,
+.dex-prose h3:first-child,
+.dex-prose p:first-child {
+  margin-top: 0;
+}
+
+.dex-prose h2 {
+  font-size: 1.125rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.25rem;
+}
+
+.dex-prose h3 {
+  font-size: 1rem;
+}
+
+.dex-prose p {
+  margin-top: 0.55em;
+  margin-bottom: 0.55em;
+}
+
+.dex-prose ul,
+.dex-prose ol {
+  margin: 0.5em 0;
+  padding-left: 1.35em;
+}
+
+.dex-prose ul {
+  list-style-type: disc;
+}
+
+.dex-prose ol {
+  list-style-type: decimal;
+}
+
+.dex-prose li {
+  margin: 0.25em 0;
+}
+
+.dex-prose strong {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.dex-prose code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background-color: #f1f5f9;
+  color: #0f172a;
+  padding: 0.125rem 0.35rem;
+  border-radius: 0.25rem;
+}
+
+.dex-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.dex-prose th,
+.dex-prose td {
+  border: 1px solid #e2e8f0;
+  padding: 0.4rem 0.65rem;
+  text-align: left;
+}
+
+.dex-prose th {
+  background-color: #f8fafc;
+  font-weight: 600;
+  color: #334155;
+}
+
+.dex-prose blockquote {
+  margin: 0.65em 0;
+  padding: 0.5rem 0.85rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  color: #475569;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
